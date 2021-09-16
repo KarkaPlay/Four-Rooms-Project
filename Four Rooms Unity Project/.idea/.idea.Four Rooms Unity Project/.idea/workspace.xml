@@ -22,6 +22,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1yEoAPuVu13wfAEXpXpasgZxt0H" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -64,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1631825969387</updated>
       <workItem from="1631826004746" duration="637000" />
-      <workItem from="1631827275407" duration="314000" />
+      <workItem from="1631827275407" duration="711000" />
     </task>
     <servers />
   </component>
