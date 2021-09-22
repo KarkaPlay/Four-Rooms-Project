@@ -6,7 +6,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
-    private float speed = 5.0f;
+    
+    public float CrouchedSpeed = 2;
+    public float speed = 5;
+
+    public float targetMovingSpeed = 5;
 
     private void Awake()
     {
@@ -22,6 +26,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Crouch.CrouchedForSpeed)
+            targetMovingSpeed = CrouchedSpeed;
+        else
+            targetMovingSpeed = speed;
         
+        Vector2 targetVelocity = new Vector2( Input.GetAxis("Horizontal") * targetMovingSpeed, Input.GetAxis("Vertical") * targetMovingSpeed);
+        playerRb.velocity = transform.rotation * new Vector3(targetVelocity.x, playerRb.velocity.y, targetVelocity.y);
     }
 }

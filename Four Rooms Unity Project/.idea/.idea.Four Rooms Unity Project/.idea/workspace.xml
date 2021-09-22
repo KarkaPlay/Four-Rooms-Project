@@ -25,6 +25,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/Mini First Person Controller/Scripts/FirstPersonMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Mini First Person Controller/Scripts/Components/Crouch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Mini First Person Controller/Scripts/Components/FirstPersonAudio.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
@@ -72,6 +75,7 @@
       <updated>1631825969387</updated>
       <workItem from="1631826004746" duration="637000" />
       <workItem from="1631827275407" duration="711000" />
+      <workItem from="1632336468456" duration="4579000" />
     </task>
     <servers />
   </component>
