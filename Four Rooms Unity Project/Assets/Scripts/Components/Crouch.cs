@@ -34,7 +34,10 @@ public class Crouch : MonoBehaviour
                 }
 
                 // Lower the head.
-                headToLower.localPosition = new Vector3(headToLower.localPosition.x, crouchYHeadPosition, headToLower.localPosition.z);
+                headToLower.localPosition = Vector3.Lerp(headToLower.localPosition,
+                    new Vector3(headToLower.localPosition.x, crouchYHeadPosition, headToLower.localPosition.z),
+                    Time.deltaTime * 5);
+                //headToLower.localPosition = new Vector3(headToLower.localPosition.x, crouchYHeadPosition, headToLower.localPosition.z);
             }
 
             // Enforce a low colliderToLower.
@@ -78,7 +81,10 @@ public class Crouch : MonoBehaviour
                 // Rise the head back up.
                 if (headToLower)
                 {
-                    headToLower.localPosition = new Vector3(headToLower.localPosition.x, defaultHeadYLocalPosition.Value, headToLower.localPosition.z);
+                    //headToLower.localPosition = new Vector3(headToLower.localPosition.x, defaultHeadYLocalPosition.Value, headToLower.localPosition.z);
+                    headToLower.localPosition = Vector3.Lerp(headToLower.localPosition,
+                        new Vector3(headToLower.localPosition.x, defaultHeadYLocalPosition.Value, headToLower.localPosition.z),
+                        Time.deltaTime * 5);
                 }
 
                 // Reset the colliderToLower's height.

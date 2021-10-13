@@ -2,36 +2,52 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody playerRb;
+    public TextMeshProUGUI tip;
+    public Image crosshairImage;
+    public Sprite[] crosshairs;
     
-    public float CrouchedSpeed = 2;
-    public float speed = 5;
+    private RaycastHit targetHit;
+    private Ray ray;
 
-    public float targetMovingSpeed = 5;
-
+    Camera camera;
+    
     private void Awake()
     {
-        playerRb = GetComponent<Rigidbody>();
+        camera = GetComponent<Camera>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ray = camera.ScreenPointToRay(Input.mousePosition);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    void FixedUpdate()
     {
-        if (Crouch.CrouchedForSpeed)
-            targetMovingSpeed = CrouchedSpeed;
+        var rayDirection = transform.TransformDirection(Vector3.forward);
+        if (Physics.Raycast(transform.position, rayDirection, out targetHit, 2.5f))
+        {
+            if (targetHit.transform.CompareTag("Key"))
+            {
+                tip.text = "Press 'E' to pick up the key";
+                tip.gameObject.SetActive(true);
+                crosshairImage.sprite = crosshairs[1];
+            }
+            else
+            {
+                tip.gameObject.SetActive(false);
+                crosshairImage.sprite = crosshairs[0];
+            }
+        }
         else
-            targetMovingSpeed = speed;
-        
-        Vector2 targetVelocity = new Vector2( Input.GetAxis("Horizontal") * targetMovingSpeed, Input.GetAxis("Vertical") * targetMovingSpeed);
-        playerRb.velocity = transform.rotation * new Vector3(targetVelocity.x, playerRb.velocity.y, targetVelocity.y);
+        {
+            tip.gameObject.SetActive(false);
+        }
+        Debug.DrawRay(transform.position, rayDirection * 2.5f, Color.cyan);
     }
 }
