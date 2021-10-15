@@ -20,7 +20,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/ProBuilderShapeEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryMoving.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -28,6 +31,12 @@
         <option value="$PROJECT_DIR$/Assets/Mini First Person Controller/Scripts/FirstPersonMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Mini First Person Controller/Scripts/Components/Crouch.cs" />
         <option value="$PROJECT_DIR$/Assets/Mini First Person Controller/Scripts/Components/FirstPersonAudio.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/Crouch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FirstPersonLook.cs" />
+        <option value="$PROJECT_DIR$/Assets/FirstPersion AIO Pack/FirstPersonAIO/FirstPersonAIO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryMoving.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Pickup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
@@ -76,6 +85,7 @@
       <workItem from="1631826004746" duration="637000" />
       <workItem from="1631827275407" duration="711000" />
       <workItem from="1632336468456" duration="4579000" />
+      <workItem from="1634061907205" duration="25348000" />
     </task>
     <servers />
   </component>
@@ -104,6 +114,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="53" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1631827230248" />
+    <state x="2878" y="235" key="RiderGenerateDialog" timestamp="1634132307163">
+      <screen x="1920" y="1" width="2560" height="1040" />
+    </state>
+    <state x="2878" y="235" key="RiderGenerateDialog/0.0.1536.824/1920.1.2560.1040@1920.1.2560.1040" timestamp="1634132307163" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1631827215896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

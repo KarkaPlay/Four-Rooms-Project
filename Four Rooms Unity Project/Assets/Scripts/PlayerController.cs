@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour
                 tip.text = "Press 'E' to pick up the key";
                 tip.gameObject.SetActive(true);
                 crosshairImage.sprite = crosshairs[1];
+                if (Input.GetKey(KeyCode.E))
+                {
+                    Debug.Log("Ты нажал е пока смотрел на ключ");
+                    targetHit.transform.gameObject.GetComponent<Pickup>().PickUp();
+                }
             }
             else
             {
