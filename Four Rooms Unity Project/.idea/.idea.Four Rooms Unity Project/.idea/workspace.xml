@@ -36,8 +36,8 @@
         <option value="$PROJECT_DIR$/Assets/FirstPersion AIO Pack/FirstPersonAIO/FirstPersonAIO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryMoving.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Pickup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Pickup.cs" />
       </list>
     </option>
   </component>
@@ -86,6 +86,7 @@
       <workItem from="1631827275407" duration="711000" />
       <workItem from="1632336468456" duration="4579000" />
       <workItem from="1634061907205" duration="25348000" />
+      <workItem from="1635103000897" duration="8667000" />
     </task>
     <servers />
   </component>
