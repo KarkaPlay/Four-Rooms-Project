@@ -38,11 +38,7 @@ public class Pickup : MonoBehaviour
     {
         int i = _inventory.slots.Count - 1;
         var item = Instantiate(slotSprite, _inventory.slots[i].transform);
-        //item.transform.localScale = new Vector3(50, 50, 50);
-        Debug.Log("объект помещен в слот");
 
         Destroy(gameObject);
-        Debug.Log("объект уничтожен");
-        Debug.Log("Элемент " + i + " теперь заполнен");
     }
 }

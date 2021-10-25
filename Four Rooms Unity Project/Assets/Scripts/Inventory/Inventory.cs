@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public List<GameObject> slots = new List<GameObject>();
-    
+    public GameObject[] items;
+
     public GameObject slotPrefab;
     public GameObject inventory;
 

@@ -37,6 +37,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryMoving.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Pickup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
@@ -86,7 +87,7 @@
       <workItem from="1631827275407" duration="711000" />
       <workItem from="1632336468456" duration="4579000" />
       <workItem from="1634061907205" duration="25348000" />
-      <workItem from="1635103000897" duration="12368000" />
+      <workItem from="1635103000897" duration="24401000" />
     </task>
     <servers />
   </component>
