@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         ray = camera.ScreenPointToRay(Input.mousePosition);
     }
     
-    void FixedUpdate()
+    void Update()
     {
         var rayDirection = transform.TransformDirection(Vector3.forward);
         if (Physics.Raycast(transform.position, rayDirection, out targetHit, 2.5f))
