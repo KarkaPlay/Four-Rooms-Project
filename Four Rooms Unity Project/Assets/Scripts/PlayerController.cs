@@ -37,13 +37,20 @@ public class PlayerController : MonoBehaviour
         {
             if (targetHit.transform.CompareTag("Key") || targetHit.transform.CompareTag("Pickable"))
             {
-                tip.text = "Press 'E' to pick up";
-                tip.gameObject.SetActive(true);
-                crosshairImage.sprite = crosshairs[1];
+                MakeTipActive("Press 'E' to pick up");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("Ты нажал е пока смотрел на ключ");
                     targetHit.transform.gameObject.GetComponent<Pickup>().PickUp();
+                }
+            }
+            else if (targetHit.transform.CompareTag("Light"))
+            {
+                MakeTipActive("Press 'E' to switch the light");
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Light light = targetHit.transform.GetChild(0).gameObject.GetComponent<Light>();
+                    light.enabled = !light.enabled;
                 }
             }
             else
@@ -108,5 +115,12 @@ public class PlayerController : MonoBehaviour
         {
             _inventory.transform.GetChild(7).GetComponent<Slot>().Grab();
         }
+    }
+
+    void MakeTipActive(string text)
+    {
+        tip.text = text;
+        tip.gameObject.SetActive(true);
+        crosshairImage.sprite = crosshairs[1];
     }
 }

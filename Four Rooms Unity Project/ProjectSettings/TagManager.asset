@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Key
   - Pickable
+  - Light
   layers:
   - Default
   - TransparentFX
