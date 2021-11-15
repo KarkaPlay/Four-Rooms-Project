@@ -14,7 +14,7 @@ public class Locker : MonoBehaviour
     private void Start()
     {
         close = transform.position;
-        open = close - transform.right * openingLength;
+        open = close - transform.TransformDirection(openingDirection) * openingLength;
     }
 
     private void FixedUpdate()
