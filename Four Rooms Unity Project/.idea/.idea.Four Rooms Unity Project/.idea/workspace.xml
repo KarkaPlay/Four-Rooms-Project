@@ -20,6 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/ProBuilderShapeEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Switch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -41,8 +42,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Switch.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Locker.cs" />
       </list>
     </option>
   </component>
@@ -92,7 +94,7 @@
       <workItem from="1632336468456" duration="4579000" />
       <workItem from="1634061907205" duration="25348000" />
       <workItem from="1635103000897" duration="24401000" />
-      <workItem from="1636977061433" duration="14805000" />
+      <workItem from="1636977061433" duration="18291000" />
     </task>
     <servers />
   </component>

@@ -64,6 +64,14 @@ public class PlayerController : MonoBehaviour
                         doorControl.isOpen = !doorControl.isOpen;
                     }
                     break;
+                case ("Locker"):
+                    MakeTipActive("Press 'E' to open the locker");
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Locker locker = targetHit.transform.GetComponent<Locker>();
+                        locker.isOpen = !locker.isOpen;
+                    }
+                    break;
                 default:
                     tip.gameObject.SetActive(false);
                     crosshairImage.sprite = crosshairs[0];

@@ -9,6 +9,7 @@ TagManager:
   - Light
   - Switch
   - Door
+  - Locker
   layers:
   - Default
   - TransparentFX

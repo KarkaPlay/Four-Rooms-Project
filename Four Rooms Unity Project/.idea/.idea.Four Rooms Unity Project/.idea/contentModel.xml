@@ -34,6 +34,7 @@
             <e p="Slot.cs" t="Include" />
             <e p="Spawn.cs" t="Include" />
           </e>
+          <e p="Locker.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Switch.cs" t="Include" />
         </e>
