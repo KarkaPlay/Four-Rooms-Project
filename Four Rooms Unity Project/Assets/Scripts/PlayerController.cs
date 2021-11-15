@@ -56,6 +56,14 @@ public class PlayerController : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                         targetHit.transform.GetComponent<Switch>().SwitchLight();
                     break;
+                case ("Door"):
+                    MakeTipActive("Press 'E' to open the door");
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Door doorControl = targetHit.transform.GetComponent<Door>();
+                        doorControl.isOpen = !doorControl.isOpen;
+                    }
+                    break;
                 default:
                     tip.gameObject.SetActive(false);
                     crosshairImage.sprite = crosshairs[0];
@@ -65,6 +73,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             tip.gameObject.SetActive(false);
+            crosshairImage.sprite = crosshairs[0];
         }
         Debug.DrawRay(transform.position, rayDirection * 2.5f, Color.cyan);
 

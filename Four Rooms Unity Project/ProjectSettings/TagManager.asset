@@ -8,6 +8,7 @@ TagManager:
   - Pickable
   - Light
   - Switch
+  - Door
   layers:
   - Default
   - TransparentFX
