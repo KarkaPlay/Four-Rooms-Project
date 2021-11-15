@@ -35,28 +35,31 @@ public class PlayerController : MonoBehaviour
         var rayDirection = transform.TransformDirection(Vector3.forward);
         if (Physics.Raycast(transform.position, rayDirection, out targetHit, 2.5f))
         {
-            if (targetHit.transform.CompareTag("Key") || targetHit.transform.CompareTag("Pickable"))
+            switch (targetHit.transform.tag)
             {
-                MakeTipActive("Press 'E' to pick up");
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    Debug.Log("Ты нажал е пока смотрел на ключ");
-                    targetHit.transform.gameObject.GetComponent<Pickup>().PickUp();
-                }
-            }
-            else if (targetHit.transform.CompareTag("Light"))
-            {
-                MakeTipActive("Press 'E' to switch the light");
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    Light light = targetHit.transform.GetChild(0).gameObject.GetComponent<Light>();
-                    light.enabled = !light.enabled;
-                }
-            }
-            else
-            {
-                tip.gameObject.SetActive(false);
-                crosshairImage.sprite = crosshairs[0];
+                case ("Key"):
+                case ("Pickable"):
+                    MakeTipActive("Press 'E' to pick up");
+                    if (Input.GetKeyDown(KeyCode.E))
+                        targetHit.transform.gameObject.GetComponent<Pickup>().PickUp();
+                    break;
+                case ("Light"):
+                    MakeTipActive("Press 'E' to switch the light");
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Light light = targetHit.transform.GetChild(0).gameObject.GetComponent<Light>();
+                        light.enabled = !light.enabled;
+                    }
+                    break;
+                case ("Switch"):
+                    MakeTipActive("Press 'E' to switch the light");
+                    if (Input.GetKeyDown(KeyCode.E))
+                        targetHit.transform.GetComponent<Switch>().SwitchLight();
+                    break;
+                default:
+                    tip.gameObject.SetActive(false);
+                    crosshairImage.sprite = crosshairs[0];
+                    break;
             }
         }
         else
@@ -65,16 +68,6 @@ public class PlayerController : MonoBehaviour
         }
         Debug.DrawRay(transform.position, rayDirection * 2.5f, Color.cyan);
 
-        try
-        {
-
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-        
         /*for(int i=0;i<9;i++)
         {
             if(Input.GetKeyDown((KeyCode)(48+i)))

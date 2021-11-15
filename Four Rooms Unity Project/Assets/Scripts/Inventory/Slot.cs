@@ -27,7 +27,7 @@ public class Slot : MonoBehaviour
         
         //Destroy(_playerController.currentItem);
 
-        Debug.Log("хочу взять в руку");
+        //Debug.Log("хочу взять в руку");
         gameObject.GetComponent<Image>().sprite = chosenSlot;
         switch (gameObject.transform.GetChild(0).gameObject.name)
         {

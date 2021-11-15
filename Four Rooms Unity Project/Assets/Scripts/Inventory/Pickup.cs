@@ -21,16 +21,16 @@ public class Pickup : MonoBehaviour
 
     public void PickUp()
     {
-        Debug.Log("ключ начал подбираться");
+        //Debug.Log("ключ начал подбираться");
         if (_inventory.slots.Count < maxLength)
         {
-            Debug.Log("о, есть место");
+            //Debug.Log("о, есть место");
             _inventory.AddSlot();
             AddToInventory();
         }
         else
         {
-            Debug.Log("не, чел, места нет");
+            //Debug.Log("не, чел, места нет");
         }
     }
 

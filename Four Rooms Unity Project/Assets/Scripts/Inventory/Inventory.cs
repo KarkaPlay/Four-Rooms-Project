@@ -14,9 +14,9 @@ public class Inventory : MonoBehaviour
 
     public void AddSlot()
     {
-        Debug.Log("добавляем");
+        //Debug.Log("добавляем");
         GameObject newSlot = Instantiate(slotPrefab, inventory.transform);
         slots.Add(newSlot);
-        Debug.Log("добавили");
+        //Debug.Log("добавили");
     }
 }
