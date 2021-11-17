@@ -9,10 +9,10 @@ public class Slot : MonoBehaviour
     public Sprite standartSlot;
     public Sprite chosenSlot;
     
-    private Inventory _inventory;
-    private PlayerController _playerController;
+    public Inventory _inventory;
+    public PlayerController _playerController;
 
-    private void Awake()
+    private void Start()
     {
         _inventory = GameObject.Find("Player").GetComponent<Inventory>();
         _playerController = GameObject.Find("Player").GetComponent<PlayerController>();

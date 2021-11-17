@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameObject currentItem;
     
     private RaycastHit targetHit;
-    private Ray ray;
+    //private Ray ray;
     private GameObject _inventory;
 
     Camera camera;
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ray = camera.ScreenPointToRay(Input.mousePosition);
+        //ray = camera.ScreenPointToRay(Mouse.current.position.ReadValue());
     }
     
     void Update()
@@ -37,13 +38,13 @@ public class PlayerController : MonoBehaviour
         {
             switch (targetHit.transform.tag)
             {
-                case ("Key"):
-                case ("Pickable"):
+                case "Key":
+                case "Pickable":
                     MakeTipActive("Press 'E' to pick up");
                     if (Input.GetKeyDown(KeyCode.E))
                         targetHit.transform.gameObject.GetComponent<Pickup>().PickUp();
                     break;
-                case ("Light"):
+                case "Light":
                     MakeTipActive("Press 'E' to switch the light");
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -51,12 +52,12 @@ public class PlayerController : MonoBehaviour
                         light.enabled = !light.enabled;
                     }
                     break;
-                case ("Switch"):
+                case "Switch":
                     MakeTipActive("Press 'E' to switch the light");
                     if (Input.GetKeyDown(KeyCode.E))
                         targetHit.transform.GetComponent<Switch>().SwitchLight();
                     break;
-                case ("Door"):
+                case "Door":
                     MakeTipActive("Press 'E' to open the door");
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
                         doorControl.isOpen = !doorControl.isOpen;
                     }
                     break;
-                case ("Locker"):
+                case "Locker":
                     MakeTipActive("Press 'E' to open the locker");
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -84,46 +85,14 @@ public class PlayerController : MonoBehaviour
             crosshairImage.sprite = crosshairs[0];
         }
         Debug.DrawRay(transform.position, rayDirection * 2.5f, Color.cyan);
-
-        /*for(int i=0;i<9;i++)
+        
+        //if (!Keyboard.current.anyKey.wasPressedThisFrame) return;
+        for(int i=0;i<9;i++)
         {
-            if(Input.GetKeyDown((KeyCode)(48+i)))
+            if(Input.GetKeyDown((KeyCode)(49+i)))
             {
-                _inventory.transform.GetChild(0).GetComponent<Slot>().Grab();
+                _inventory.transform.GetChild(i).GetComponent<Slot>().Grab();
             }
-        }*/
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            _inventory.transform.GetChild(0).GetComponent<Slot>().Grab();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            _inventory.transform.GetChild(1).GetComponent<Slot>().Grab();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            _inventory.transform.GetChild(2).GetComponent<Slot>().Grab();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            _inventory.transform.GetChild(3).GetComponent<Slot>().Grab();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            _inventory.transform.GetChild(4).GetComponent<Slot>().Grab();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            _inventory.transform.GetChild(5).GetComponent<Slot>().Grab();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            _inventory.transform.GetChild(6).GetComponent<Slot>().Grab();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            _inventory.transform.GetChild(7).GetComponent<Slot>().Grab();
         }
     }
 
