@@ -14,28 +14,17 @@ public class PlayerController : MonoBehaviour
     public GameObject currentItem;
     
     private RaycastHit targetHit;
-    //private Ray ray;
     private GameObject _inventory;
 
-    Camera camera;
-    
     private void Awake()
     {
-        camera = GetComponent<Camera>();
         _inventory = GameObject.Find("Inventory");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //ray = camera.ScreenPointToRay(Mouse.current.position.ReadValue());
-    }
-    
     void Update()
     {
         var rayDirection = transform.TransformDirection(Vector3.forward);
         if (Physics.Raycast(transform.position, rayDirection, out targetHit, 2.5f))
-        {
             switch (targetHit.transform.tag)
             {
                 case "Key":
@@ -78,7 +67,6 @@ public class PlayerController : MonoBehaviour
                     crosshairImage.sprite = crosshairs[0];
                     break;
             }
-        }
         else
         {
             tip.gameObject.SetActive(false);
@@ -87,7 +75,9 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(transform.position, rayDirection * 2.5f, Color.cyan);
         
         //if (!Keyboard.current.anyKey.wasPressedThisFrame) return;
-        for(int i=0;i<9;i++)
+        //if (!Input.anyKeyDown) return;
+
+        for(int i=0; i<9; i++)
         {
             if(Input.GetKeyDown((KeyCode)(49+i)))
             {
