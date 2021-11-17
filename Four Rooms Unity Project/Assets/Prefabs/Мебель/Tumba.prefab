@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3838165614828796780}
   m_Layer: 0
   m_Name: "\u041A\u0443\u0431.023"
-  m_TagString: Untagged
+  m_TagString: Locker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 3634342846883792617}
   m_Layer: 0
   m_Name: "\u041A\u0443\u0431.003"
-  m_TagString: Untagged
+  m_TagString: Locker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 5821877156239275064}
   m_Layer: 0
   m_Name: "\u041A\u0443\u0431.004"
-  m_TagString: Untagged
+  m_TagString: Locker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
