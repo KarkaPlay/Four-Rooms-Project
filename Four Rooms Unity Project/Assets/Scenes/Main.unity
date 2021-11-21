@@ -740,6 +740,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1776,6 +1777,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 8718781903942555680, guid: 93b1bf09089949c4392761ca444ffa5f, type: 3}
+      propertyPath: open.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718781903942555680, guid: 93b1bf09089949c4392761ca444ffa5f, type: 3}
+      propertyPath: close.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93b1bf09089949c4392761ca444ffa5f, type: 3}
 --- !u!1001 &1039604143
@@ -2504,7 +2513,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19444
+  m_Name: pb_Mesh33110
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2868,6 +2877,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 20250cff8ca0e5340a0c72dabee35a5b, type: 2}
     - target: {fileID: -3186935836317489533, guid: 630f1fa5806c7a94da64fac576efdecd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3702784
+      objectReference: {fileID: 0}
+    - target: {fileID: -3186935836317489533, guid: 630f1fa5806c7a94da64fac576efdecd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6450629
+      objectReference: {fileID: 0}
+    - target: {fileID: -3186935836317489533, guid: 630f1fa5806c7a94da64fac576efdecd, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
@@ -2968,10 +2985,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b67858a88a3a44380b75843fe737e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  close: {x: 0, y: 0, z: 0}
+  close: {x: 0, y: 0, z: 1}
   open: {x: 0, y: 0, z: 0}
-  openAngle: 120
+  openAngle: 90
   isOpen: 0
+  On_The_Minus: 0
 --- !u!65 &1964693244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2997,10 +3015,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b67858a88a3a44380b75843fe737e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  close: {x: 0, y: 0, z: 0}
-  open: {x: 0, y: 0, z: 0}
-  openAngle: 120
+  close: {x: 0, y: 0, z: 1}
+  open: {x: 0, y: 0, z: 1}
+  openAngle: 90
   isOpen: 0
+  On_The_Minus: 0
 --- !u!65 &1964693246
 BoxCollider:
   m_ObjectHideFlags: 0
