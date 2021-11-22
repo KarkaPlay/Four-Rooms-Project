@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
                         targetHit.transform.GetComponent<Switch>().SwitchLight();
                     break;
                 case "Door":
-                    MakeTipActive("Press 'E' to open the door");
+                    MakeTipActive("Press 'E' to open/close the door");
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Door doorControl = targetHit.transform.GetComponent<Door>();
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
                     }
                     break;
                 case "Locker":
-                    MakeTipActive("Press 'E' to open the locker");
+                    MakeTipActive("Press 'E' to open/close the locker");
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Locker locker = targetHit.transform.GetComponent<Locker>();
