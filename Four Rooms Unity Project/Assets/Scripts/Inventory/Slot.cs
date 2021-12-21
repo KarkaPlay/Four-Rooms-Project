@@ -29,13 +29,18 @@ public class Slot : MonoBehaviour
 
         //Debug.Log("хочу взять в руку");
         gameObject.GetComponent<Image>().sprite = chosenSlot;
+        Destroy(_playerController.currentItem);
         switch (gameObject.transform.GetChild(0).gameObject.name)
         {
             case "Ключ (в инвентаре)(Clone)":
+
                 _playerController.currentItem = Instantiate(_inventory.items[0], GameObject.Find("Player Camera").transform);
+
                 break;
             case "Нож (в инвентаре)(Clone)":
+
                 _playerController.currentItem = Instantiate(_inventory.items[1], GameObject.Find("Player Camera").transform);
+
                 break;
         }
     }
