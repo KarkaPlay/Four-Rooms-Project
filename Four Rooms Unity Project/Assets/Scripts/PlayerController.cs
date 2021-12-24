@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Image crosshairImage;
     public Sprite[] crosshairs;
     public GameObject currentItem;
+    public Light flashlight;
     
     private RaycastHit targetHit;
     private GameObject _inventory;
@@ -83,6 +85,11 @@ public class PlayerController : MonoBehaviour
             {
                 _inventory.transform.GetChild(i).GetComponent<Slot>().Grab();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            flashlight.enabled = !flashlight.enabled;
         }
     }
 
