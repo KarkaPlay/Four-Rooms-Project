@@ -21,13 +21,13 @@ public class Flikkering : MonoBehaviour
     {
         isFlikkering = true;
 
-        //gameObject.GetComponent<Light>().enabled = false;
-        gameObject.GetComponent<Light>().intensity /= 2;
+        gameObject.GetComponent<Light>().enabled = false;
+        //.GetComponent<Light>().intensity /= 2;
         timeDelay = Random.Range(0.01f, 0.2f);
         yield return new WaitForSeconds(timeDelay);
         
-        //gameObject.GetComponent<Light>().enabled = true;
-        gameObject.GetComponent<Light>().intensity *= 2;
+        gameObject.GetComponent<Light>().enabled = true;
+        //gameObject.GetComponent<Light>().intensity *= 2;
         timeDelay = Random.Range(0.01f, 0.2f);
         yield return new WaitForSeconds(timeDelay);
 
