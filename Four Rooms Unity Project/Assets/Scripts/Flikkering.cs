@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,7 +9,8 @@ public class Flikkering : MonoBehaviour
 {
     public bool isFlikkering = false;
     public float timeDelay;
-    
+    public float minDelay, maxDelay;
+
     private void Update()
     {
         if (!isFlikkering)
@@ -23,12 +25,12 @@ public class Flikkering : MonoBehaviour
 
         gameObject.GetComponent<Light>().enabled = false;
         //.GetComponent<Light>().intensity /= 2;
-        timeDelay = Random.Range(0.01f, 0.2f);
+        timeDelay = Random.Range(minDelay, maxDelay);
         yield return new WaitForSeconds(timeDelay);
         
         gameObject.GetComponent<Light>().enabled = true;
         //gameObject.GetComponent<Light>().intensity *= 2;
-        timeDelay = Random.Range(0.01f, 0.2f);
+        timeDelay = Random.Range(minDelay, maxDelay);
         yield return new WaitForSeconds(timeDelay);
 
         isFlikkering = false;
