@@ -12,6 +12,7 @@ public class Door : MonoBehaviour
     [HideInInspector]public bool isOpen;
     private Quaternion openQ, closeQ;
 
+    public bool needKey;
     public bool rotateBackwards; //Если надо поворачивать в -
 
     private void Start()
@@ -33,7 +34,7 @@ public class Door : MonoBehaviour
         Use(isOpen ? openQ : closeQ);
     }
 
-    void Use(Quaternion state)
+    public void Use(Quaternion state)
     {
         transform.rotation = Quaternion.RotateTowards(transform.rotation, state, rotationSpeed * Time.deltaTime);
     }

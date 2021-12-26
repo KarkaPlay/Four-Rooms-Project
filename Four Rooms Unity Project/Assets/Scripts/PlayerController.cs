@@ -14,13 +14,16 @@ public class PlayerController : MonoBehaviour
     public Sprite[] crosshairs;
     public GameObject currentItem;
     public Light flashlight;
+    public bool hasKey;
     
     private RaycastHit targetHit;
-    private GameObject _inventory;
+    private GameObject inventoryUI;
+    private Inventory inventory;
 
     private void Awake()
     {
-        _inventory = GameObject.Find("Inventory");
+        inventoryUI = GameObject.Find("Inventory");
+        inventory = transform.parent.parent.GetComponent<Inventory>();
     }
 
     void Update()
@@ -53,7 +56,33 @@ public class PlayerController : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Door doorControl = targetHit.transform.GetComponent<Door>();
-                        doorControl.isOpen = !doorControl.isOpen;
+                        hasKey = false;
+                        int i = 0;
+                        foreach (var slot in inventory.slots)
+                        {
+                            var item = slot.transform.GetChild(i);
+                            if (item.CompareTag("Key"))
+                            {
+                                hasKey = true;
+                                break;
+                            }
+                            i++;
+                        }
+                        if (doorControl.needKey)
+                        {
+                            if (hasKey)
+                            {
+                                doorControl.needKey = false;
+                                doorControl.isOpen = !doorControl.isOpen;
+                                //Destroy(inventory.items[0]);
+                                //Destroy(inventoryUI.transform.GetChild(0));
+                                inventory.RemoveSlot(i);
+                            }
+                        }
+                        else
+                        {
+                            doorControl.isOpen = !doorControl.isOpen;
+                        }
                     }
                     break;
                 case "Locker":
@@ -83,7 +112,7 @@ public class PlayerController : MonoBehaviour
         {
             if(Input.GetKeyDown((KeyCode)(49+i)))
             {
-                _inventory.transform.GetChild(i).GetComponent<Slot>().Grab();
+                inventoryUI.transform.GetChild(i).GetComponent<Slot>().Grab();
             }
         }
 

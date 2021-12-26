@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3597648311250156435}
   m_Layer: 5
   m_Name: "\u041D\u043E\u0436 (\u0432 \u0438\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u0435)"
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
