@@ -48,7 +48,9 @@ public class PlayerController : MonoBehaviour
                 case "Pickable":
                     MakeTipActive("Press 'E' to pick up");
                     if (Input.GetKeyDown(KeyCode.E))
+                    {
                         targetHit.transform.gameObject.GetComponent<Pickup>().PickUp();
+                    }
                     break;
                 case "Light":
                     MakeTipActive("Press 'E' to switch the light");
@@ -103,11 +105,18 @@ public class PlayerController : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Locker vent = targetHit.transform.GetComponent<Locker>();
-                        if (HasInInventory("Knife"))
+                        if (vent.needKnife)
                         {
-                            vent.needKnife = false;
+                            if (HasInInventory("Screwdriver"))
+                            {
+                                vent.needKnife = false;
+                                vent.isOpen = !vent.isOpen;
+                                inventory.RemoveSlot(i);
+                            }
+                        }
+                        else
+                        {
                             vent.isOpen = !vent.isOpen;
-                            inventory.RemoveSlot(i);
                         }
                     }
                     break;
