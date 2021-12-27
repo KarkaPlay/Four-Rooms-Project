@@ -17,14 +17,22 @@ public class PlayerController : MonoBehaviour
     
     private bool hasKey;
     private bool hasKnife;
+    private bool hasScrewdriver;
     private RaycastHit targetHit;
     private GameObject inventoryUI;
     private Inventory inventory;
+
+    [Header("Скример")] 
+    public GameObject zombie;
+    public AudioClip stuk;
+    public AudioClip screamer;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         inventoryUI = GameObject.Find("Inventory");
         inventory = transform.parent.parent.GetComponent<Inventory>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private int i;
@@ -36,6 +44,7 @@ public class PlayerController : MonoBehaviour
             {
                 case "Key":
                 case "Knife":
+                case "Screwdriver":
                 case "Pickable":
                     MakeTipActive("Press 'E' to pick up");
                     if (Input.GetKeyDown(KeyCode.E))
@@ -52,7 +61,10 @@ public class PlayerController : MonoBehaviour
                 case "Switch":
                     MakeTipActive("Press 'E' to switch the light");
                     if (Input.GetKeyDown(KeyCode.E))
+                    {
                         targetHit.transform.GetComponent<Switch>().SwitchLight();
+                        targetHit.transform.localScale = Vector3.Scale(targetHit.transform.localScale, new Vector3(1, -1, 1));
+                    }
                     break;
                 case "Door":
                     MakeTipActive("Press 'E' to open/close the door");
@@ -86,27 +98,27 @@ public class PlayerController : MonoBehaviour
                         }
                     }
                     break;
+                case "Vent":
+                    MakeTipActive("Press 'E' to open/close the vent");
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Locker vent = targetHit.transform.GetComponent<Locker>();
+                        if (HasInInventory("Knife"))
+                        {
+                            vent.needKnife = false;
+                            vent.isOpen = !vent.isOpen;
+                            inventory.RemoveSlot(i);
+                        }
+                    }
+                    break;
                 case "Locker":
                     MakeTipActive("Press 'E' to open/close the locker");
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Locker locker = targetHit.transform.GetComponent<Locker>();
-                        hasKnife = false;
-                        i = 0;
-                        foreach (var slot in inventory.slots)
-                        {
-                            var item = slot.transform.GetChild(i);
-                            if (item.CompareTag("Knife"))
-                            {
-                                hasKnife = true;
-                                break;
-                            }
-                            i++;
-                        }
-
                         if (locker.needKnife)
                         {
-                            if (hasKnife)
+                            if (HasInInventory("Knife"))
                             {
                                 locker.needKnife = false;
                                 locker.isOpen = !locker.isOpen;
@@ -146,6 +158,35 @@ public class PlayerController : MonoBehaviour
         {
             flashlight.enabled = !flashlight.enabled;
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            audioSource.clip = stuk;
+            audioSource.Play();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            zombie.SetActive(true);
+            audioSource.clip = screamer;
+            audioSource.Play();
+        }
+    }
+
+    bool HasInInventory(string tag)
+    {
+        i = 0;
+        foreach (var slot in inventory.slots)
+        {
+            var item = slot.transform.GetChild(i);
+            if (item.CompareTag(tag))
+            {
+                return true;
+                break;
+            }
+            i++;
+        }
+        return false;
     }
 
     void MakeTipActive(string text)

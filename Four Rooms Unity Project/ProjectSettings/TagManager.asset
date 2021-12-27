@@ -12,6 +12,7 @@ TagManager:
   - Locker
   - Vent
   - Knife
+  - Screwdriver
   layers:
   - Default
   - TransparentFX

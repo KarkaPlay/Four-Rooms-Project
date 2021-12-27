@@ -3,7 +3,27 @@ guid: f16b8524f4f0fe04fb4b7381229db6e8
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fabric_Pattern_03.001
+    second: {fileID: 2100000, guid: b932c570535600344b76bc6ef4a3a1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Feathers 01
+    second: {fileID: 2100000, guid: 4836632de061004478e5ea6a3e56289a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.002"
+    second: {fileID: 2100000, guid: defecb28ae635cf4aa7da78530511bc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.003"
+    second: {fileID: 2100000, guid: f4445c21d12679543a6a6416b687b07e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
