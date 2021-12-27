@@ -123,7 +123,7 @@
       <workItem from="1637865397436" duration="4413000" />
       <workItem from="1640205306295" duration="42000" />
       <workItem from="1640210964953" duration="2471000" />
-      <workItem from="1640281179222" duration="15336000" />
+      <workItem from="1640281179222" duration="16689000" />
     </task>
     <servers />
   </component>
@@ -147,24 +147,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs</url>
-          <line>57</line>
-          <properties documentPath="C:\Users\c1e2r\Desktop\Политех проекты\2 курс\Four-Rooms-Project\Four Rooms Unity Project\Assets\Scripts\PlayerController.cs" initialLine="57" containingFunctionPresentation="method 'Update'">
-            <startOffsets>
-              <option value="2063" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2123" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

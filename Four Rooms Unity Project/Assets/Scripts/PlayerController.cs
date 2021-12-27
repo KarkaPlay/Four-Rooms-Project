@@ -14,8 +14,9 @@ public class PlayerController : MonoBehaviour
     public Sprite[] crosshairs;
     public GameObject currentItem;
     public Light flashlight;
-    public bool hasKey;
     
+    private bool hasKey;
+    private bool hasKnife;
     private RaycastHit targetHit;
     private GameObject inventoryUI;
     private Inventory inventory;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         inventory = transform.parent.parent.GetComponent<Inventory>();
     }
 
+    private int i;
     void Update()
     {
         var rayDirection = transform.TransformDirection(Vector3.forward);
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
             switch (targetHit.transform.tag)
             {
                 case "Key":
+                case "Knife":
                 case "Pickable":
                     MakeTipActive("Press 'E' to pick up");
                     if (Input.GetKeyDown(KeyCode.E))
@@ -57,7 +60,7 @@ public class PlayerController : MonoBehaviour
                     {
                         Door doorControl = targetHit.transform.GetComponent<Door>();
                         hasKey = false;
-                        int i = 0;
+                        i = 0;
                         foreach (var slot in inventory.slots)
                         {
                             var item = slot.transform.GetChild(i);
@@ -74,8 +77,6 @@ public class PlayerController : MonoBehaviour
                             {
                                 doorControl.needKey = false;
                                 doorControl.isOpen = !doorControl.isOpen;
-                                //Destroy(inventory.items[0]);
-                                //Destroy(inventoryUI.transform.GetChild(0));
                                 inventory.RemoveSlot(i);
                             }
                         }
@@ -90,7 +91,32 @@ public class PlayerController : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Locker locker = targetHit.transform.GetComponent<Locker>();
-                        locker.isOpen = !locker.isOpen;
+                        hasKnife = false;
+                        i = 0;
+                        foreach (var slot in inventory.slots)
+                        {
+                            var item = slot.transform.GetChild(i);
+                            if (item.CompareTag("Knife"))
+                            {
+                                hasKnife = true;
+                                break;
+                            }
+                            i++;
+                        }
+
+                        if (locker.needKnife)
+                        {
+                            if (hasKnife)
+                            {
+                                locker.needKnife = false;
+                                locker.isOpen = !locker.isOpen;
+                                inventory.RemoveSlot(i);
+                            }
+                        }
+                        else
+                        {
+                            locker.isOpen = !locker.isOpen;
+                        }
                     }
                     break;
                 default:

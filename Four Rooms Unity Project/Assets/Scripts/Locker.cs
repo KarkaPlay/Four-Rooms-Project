@@ -10,6 +10,7 @@ public class Locker : MonoBehaviour
     public Vector3 openingDirection;
     public float openingLength;
     public bool isOpen;
+    public bool needKnife;
 
     private void Start()
     {
