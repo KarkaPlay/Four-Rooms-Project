@@ -29,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/../../Физическое моделирование компьютерных игр/ЛР 6/Lab 6/Assets/RBSolution.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/02aa3adbfdb645669ebcf8738577b239156800/e1/b47b379b/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Triggers/BooksFlyTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/00c558282d074245ab3496e2d108079b46a800/5d/99f0b6f3/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/02aa3adbfdb645669ebcf8738577b239156800/fe/60f07ae2/RectTransform.cs" root0="SKIP_HIGHLIGHTING" />
@@ -124,7 +125,7 @@
       <workItem from="1637865397436" duration="4413000" />
       <workItem from="1640205306295" duration="42000" />
       <workItem from="1640210964953" duration="2471000" />
-      <workItem from="1640281179222" duration="22567000" />
+      <workItem from="1640281179222" duration="28520000" />
     </task>
     <servers />
   </component>
